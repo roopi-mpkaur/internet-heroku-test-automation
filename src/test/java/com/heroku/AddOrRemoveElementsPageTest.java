@@ -6,11 +6,16 @@ import org.testng.annotations.*;
 
 public class AddOrRemoveElementsPageTest extends CrossBrowserTest {
 
-    @Test(priority = 0)
+    @Test(priority = 1)
     public void openAddRemoveButtonsTest() {
         driver.get(getBaseUrl());
         driver.findElement(By.cssSelector("#content > ul > li:nth-child(2) > a")).click();
     }
+
+//    @AfterClass
+//    public void afterTestAddRemoveButtons() {
+//        driver.get("https://the-internet.herokuapp.com/");
+//    }
 
     @Test(priority = 2)
     public void pageHeaderTest() {

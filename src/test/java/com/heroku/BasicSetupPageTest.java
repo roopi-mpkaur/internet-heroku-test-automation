@@ -12,6 +12,10 @@ import java.net.URL;
 public class BasicSetupPageTest extends ConfigReader {
 
     protected static WebDriver driver;
+//    String platform = System.getenv("platform");
+//    String browser= System.getenv("browser");
+//    String osOption = System.getenv("os");
+//    String version = System.getenv("version");
     String platform = System.getProperty("platform");
     String browser = System.getProperty("browser");
     String osOption = System.getProperty("os");
@@ -19,7 +23,7 @@ public class BasicSetupPageTest extends ConfigReader {
     protected URL url;
 
     @BeforeSuite
-    public void browserSetup() {
+    public void browswerSetup() {
          if(platform.equalsIgnoreCase("local")) {
              try {
                  if (browser.equalsIgnoreCase("chrome")) {

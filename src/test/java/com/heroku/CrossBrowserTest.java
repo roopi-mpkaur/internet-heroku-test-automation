@@ -15,20 +15,25 @@ import java.net.URL;
 public class CrossBrowserTest extends ConfigReader {
 
     protected static WebDriver driver;
+//    protected static String platform = System.getenv("platform");
+//    protected static String browser = System.getenv("browser");
+//    protected static String operatingSystem = System.getenv("operatingSystem");
+//    protected static String  version = System.getenv("version");
     protected static String platform = System.getProperty("platform");
     protected static String browser = System.getProperty("browser");
     protected static String operatingSystem = System.getProperty("operatingSystem");
     protected static String  version = System.getProperty("version");
     protected URL url;
-@BeforeSuite
+    @BeforeSuite
     public void browserSetup () {
         if (platform.equalsIgnoreCase("local")) {
             if (browser.equalsIgnoreCase("chrome")) {
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("--remote-allow-origins=*");
+
                 driver = new ChromeDriver(options);
-            } else if (browser.equalsIgnoreCase("firefox") ) {
+            } else if (browser.equalsIgnoreCase("firefox")) {
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
             } else if (browser.equalsIgnoreCase("edge")) {
@@ -41,7 +46,7 @@ public class CrossBrowserTest extends ConfigReader {
         }
         driver.get(getBaseUrl());
     }
-
+    @AfterSuite
     public void afterSuite() {
         System.out.println("Closing driver is successful");
         driver.quit();
