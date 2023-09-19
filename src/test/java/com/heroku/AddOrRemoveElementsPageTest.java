@@ -12,11 +12,6 @@ public class AddOrRemoveElementsPageTest extends CrossBrowserTest {
         driver.findElement(By.cssSelector("#content > ul > li:nth-child(2) > a")).click();
     }
 
-//    @AfterClass
-//    public void afterTestAddRemoveButtons() {
-//        driver.get("https://the-internet.herokuapp.com/");
-//    }
-
     @Test(priority = 2)
     public void pageHeaderTest() {
         AddOrRemoveElementsPage addOrRemoveElementsPage = PageFactory.initElements(driver, AddOrRemoveElementsPage.class);
