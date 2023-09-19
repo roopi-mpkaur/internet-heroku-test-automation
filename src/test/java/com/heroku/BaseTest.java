@@ -19,7 +19,6 @@ public class BaseTest {
 
     @AfterSuite
     public void afterSuite() {
-        System.out.println("Are we closing driver?");
         driver.quit();
     }
 }

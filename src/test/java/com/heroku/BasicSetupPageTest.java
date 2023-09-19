@@ -26,7 +26,7 @@ public class BasicSetupPageTest extends ConfigReader {
     protected URL url;
 
     @BeforeSuite
-    public void browswerSetup() {
+    public void browserSetup() {
          if(platform.equalsIgnoreCase("local")) {
              try {
                  if (browser.equalsIgnoreCase("chrome")) {
